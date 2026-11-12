@@ -1,15 +1,15 @@
 app = 'fly-tk-cba'
-primary_region = 'ams'
+primary_region = 'ams'   # Keep it in AMS since the volume is there
 
 [build]
   dockerfile = 'Dockerfile'
 
 [[mounts]]
-  source = 'anvil_data'
-  destination = '/data'  # <--- MUST be /data, not /data-v3
+  source = 'anvil_data'  # Keep the original name
+  destination = '/data'
 
 [http_service]
-  internal_port = 8080   # <--- MUST be 8080
+  internal_port = 8545
   force_https = true
   auto_stop_machines = 'off'
   auto_start_machines = true
