@@ -1,24 +1,13 @@
-app = 'fly-tk-cba'
-primary_region = 'ams'
+FROM ghcr.io/foundry-rs/foundry:latest
 
-[build]
-  dockerfile = 'Dockerfile'
+USER root
 
-[[mounts]]
-  source = 'anvil_data'
-  destination = '/data'
+EXPOSE 8545
 
-[http_service]
-  internal_port = 8545
-  force_https = true
-  auto_stop_machines = 'off'
-  auto_start_machines = true
-  min_machines_running = 1
-
-[[restart]]
-  policy = "always"
-
-[[vm]]
-  cpu_kind = 'shared'
-  cpus = 2
-  memory_mb = 1024
+ENTRYPOINT ["anvil"]
+CMD ["--fork-url", "https://mainnet.base.org", \
+     "--chain-id", "84533", \
+     "--host", "0.0.0.0", \
+     "--port", "8545", \
+     "--state", "/data/anvil-state.json", \
+     "--state-interval", "60"]
