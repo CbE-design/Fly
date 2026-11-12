@@ -6,7 +6,7 @@ primary_region = 'ams'
 
 [[mounts]]
   source = 'anvil_data'
-  destination = '/data'
+  destination = '/data2'
 
 [http_service]
   internal_port = 8545
