@@ -11,10 +11,10 @@ primary_region = 'ams'
 
 [[mounts]]
   source = 'anvil_data'
-  destination = '/data2'
+  destination = '/data'
 
 [http_service]
-  internal_port = 8080
+  internal_port = 8545
   force_https = true
   auto_stop_machines = 'off'
   auto_start_machines = true
