@@ -1,11 +1,16 @@
-app = 'fly-tk-cba'
-primary_region = 'ams'   # Keep it in AMS since the volume is there
+# fly.toml app configuration file generated for base-mainnet on 2026-11-12T17:47:02Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'base-mainnet'
+primary_region = 'fra'
 
 [build]
   dockerfile = 'Dockerfile'
 
 [[mounts]]
-  source = 'anvil_data'  # Keep the original name
+  source = 'anvil_data'
   destination = '/data'
 
 [http_service]
@@ -16,7 +21,7 @@ primary_region = 'ams'   # Keep it in AMS since the volume is there
   min_machines_running = 1
 
 [[restart]]
-  policy = "always"
+  policy = 'always'
 
 [[vm]]
   cpu_kind = 'shared'
