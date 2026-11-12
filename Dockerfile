@@ -1,14 +1,24 @@
-FROM ghcr.io/foundry-rs/foundry:latest
+app = 'fly-tk-cba'
+primary_region = 'ams'
 
-# Force root user to avoid permission issues with the Fly volume
-USER root
+[build]
+  dockerfile = 'Dockerfile'
 
-EXPOSE 8545
+[[mounts]]
+  source = 'anvil_data'
+  destination = '/data'
 
-CMD ["anvil", \
-     "--fork-url", "https://mainnet.base.org", \
-     "--chain-id", "84533", \
-     "--host", "0.0.0.0", \
-     "--port", "8545", \
-     "--state", "/data/anvil-state-84533.json", \
-     "--state-interval", "60"]
+[http_service]
+  internal_port = 8545
+  force_https = true
+  auto_stop_machines = 'off'
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[restart]]
+  policy = "always"
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 2
+  memory_mb = 1024
