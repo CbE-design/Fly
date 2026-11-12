@@ -3,10 +3,11 @@ primary_region = 'ams'
 
 [build]
   dockerfile = 'Dockerfile'
+  build_args = { CACHE_BUSTER = "v-final-2" }
 
 [[mounts]]
   source = 'anvil_data'
-  destination = '/data-v2'
+  destination = '/data-v3'
 
 [http_service]
   internal_port = 8545
