@@ -1,5 +1,5 @@
 app = 'fly-tk-cba'
-primary_region = 'fra'
+primary_region = 'ams'
 
 [build]
   dockerfile = 'Dockerfile'
