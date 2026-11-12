@@ -6,8 +6,8 @@ EXPOSE 8545
 
 ENTRYPOINT ["anvil"]
 CMD ["--fork-url", "https://mainnet.base.org", \
-     "--chain-id", "84533", \
+     "--chain-id", "8453", \
      "--host", "0.0.0.0", \
      "--port", "8545", \
-     "--state", "/data/anvil-state.json", \
+     "--state", "/data/anvil-state-8453.json", \
      "--state-interval", "60"]
