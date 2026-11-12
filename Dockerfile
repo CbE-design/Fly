@@ -10,5 +10,5 @@ CMD ["anvil", \
      "--chain-id", "84533", \
      "--host", "0.0.0.0", \
      "--port", "8545", \
-     "--state", "/data/anvil-state.json", \
+     "--state", "/data/anvil-state-84533.json", \
      "--state-interval", "60"]
