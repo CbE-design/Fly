@@ -4,4 +4,4 @@ USER root
 
 EXPOSE 8545
 
-CMD ["anvil", "--fork-url", "https://mainnet.base.org", "--chain-id", "8453", "--host", "0.0.0.0", "--port", "8545", "--state", "/data-v2/anvil-state.json", "--state-interval", "60"]
+CMD ["anvil", "--fork-url", "https://mainnet.base.org", "--chain-id", "8453", "--host", "0.0.0.0", "--port", "8545", "--state", "/data-v3/anvil-state.json", "--state-interval", "60"]
