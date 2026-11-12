@@ -3,14 +3,13 @@ primary_region = 'ams'
 
 [build]
   dockerfile = 'Dockerfile'
-  build_args = { CACHE_BUSTER = "v-final-2" }
 
 [[mounts]]
   source = 'anvil_data'
-  destination = '/data-v3'
+  destination = '/data'  # <--- MUST be /data, not /data-v3
 
 [http_service]
-  internal_port = 8545
+  internal_port = 8080   # <--- MUST be 8080
   force_https = true
   auto_stop_machines = 'off'
   auto_start_machines = true
